@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/nfroze/Project-13-CI-CD-Pipeline-Comparison.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'cd sample-apps/python-app && pip install -r requirements.txt'
+            }
+        }
+        
+        stage('Deploy to Dev') {
+            steps {
+                sh 'echo "Deploying Python app to Dev server"'
+                // We'll add actual deployment commands later
+            }
+        }
+    }
+}
