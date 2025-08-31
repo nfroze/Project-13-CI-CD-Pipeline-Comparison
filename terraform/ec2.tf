@@ -1,6 +1,6 @@
 # Jenkins Instance
 resource "aws_instance" "jenkins" {
-  ami           = "ami-0e8d228ad90af673a"  # Ubuntu 22.04 in eu-west-2
+  ami           = "ami-0b45ae66668865cd6"
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = aws_subnet.public.id
@@ -14,7 +14,7 @@ resource "aws_instance" "jenkins" {
 
 # GitLab Instance
 resource "aws_instance" "gitlab" {
-  ami           = "ami-0e8d228ad90af673a"
+  ami           = "ami-0b45ae66668865cd6"
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = aws_subnet.public.id
@@ -28,7 +28,7 @@ resource "aws_instance" "gitlab" {
 
 # SonarQube Instance
 resource "aws_instance" "sonarqube" {
-  ami           = "ami-0e8d228ad90af673a"
+  ami           = "ami-0b45ae66668865cd6"
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = aws_subnet.public.id
@@ -42,7 +42,7 @@ resource "aws_instance" "sonarqube" {
 
 # Dev Environment
 resource "aws_instance" "dev" {
-  ami           = "ami-0e8d228ad90af673a"
+  ami           = "ami-0b45ae66668865cd6"
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = aws_subnet.public.id
@@ -56,7 +56,7 @@ resource "aws_instance" "dev" {
 
 # Staging Environment
 resource "aws_instance" "staging" {
-  ami           = "ami-0e8d228ad90af673a"
+  ami           = "ami-0b45ae66668865cd6"
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = aws_subnet.public.id
@@ -70,7 +70,7 @@ resource "aws_instance" "staging" {
 
 # Production Environment
 resource "aws_instance" "prod" {
-  ami           = "ami-0e8d228ad90af673a"
+  ami           = "ami-0b45ae66668865cd6"
   instance_type = var.instance_type
   key_name      = var.key_name
   subnet_id     = aws_subnet.public.id
