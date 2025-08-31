@@ -11,7 +11,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'cd sample-apps/python-app && pip install -r requirements.txt'
+                sh 'cd sample-apps/python-app && pip install -r requirements.txt --break-system-packages'
             }
         }
         
