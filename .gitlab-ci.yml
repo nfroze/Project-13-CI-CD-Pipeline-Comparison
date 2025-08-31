@@ -1,0 +1,36 @@
+stages:
+  - build
+  - test
+  - deploy-dev
+  - deploy-staging
+  - deploy-prod
+
+build:
+  stage: build
+  script:
+    - echo "Building Node.js app"
+    - cd sample-apps/node-app
+    - echo "npm install would run here"
+
+test:
+  stage: test
+  script:
+    - echo "Testing Node.js app"
+    - cd sample-apps/node-app
+    - echo "npm test would run here"
+
+deploy-dev:
+  stage: deploy-dev
+  script:
+    - echo "Deploying to Dev server 52.56.150.40"
+
+deploy-staging:
+  stage: deploy-staging
+  script:
+    - echo "Deploying to Staging server 18.171.171.215"
+
+deploy-prod:
+  stage: deploy-prod
+  script:
+    - echo "Deploying to Production server 35.179.166.167"
+  when: manual

@@ -21,7 +21,7 @@ resource "aws_instance" "gitlab" {
   vpc_security_group_ids = [aws_security_group.cicd_tools.id]
 
     root_block_device {
-    volume_size = 20
+    volume_size = 30
     }
 
   tags = {
