@@ -12,3 +12,13 @@ variable "instance_type" {
   description = "EC2 instance type"
   default     = "t2.micro"
 }
+
+variable "gitlab_instance_type" {
+  description = "EC2 instance type for GitLab"
+  default     = "t2.medium" 
+}
+
+variable "sonarqube_instance_type" {
+  description = "EC2 instance type for SonarQube"
+  default     = "t2.medium"
+}
