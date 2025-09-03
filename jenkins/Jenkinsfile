@@ -26,7 +26,7 @@ pipeline {
                 sh '''
                 echo "Deploying Python app to App Server"
                 scp -o StrictHostKeyChecking=no -r sample-apps/python-app/* ubuntu@18.134.245.3:/var/www/python-app/
-                ssh -o StrictHostKeyChecking=no ubuntu@18.134.245.3 "cd /var/www/python-app && pip install -r requirements.txt --break-system-packages && nohup python3 app.py > /dev/null 2>&1 &"
+                ssh -o StrictHostKeyChecking=no ubuntu@18.134.245.3 "cd /var/www/python-app && pip install -r requirements.txt --break-system-packages && nohup python3 app.py </dev/null >/dev/null 2>&1 &"
                 '''
             }
         }
