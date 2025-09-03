@@ -1,6 +1,6 @@
 # Project 13: CI/CD Pipeline Comparison
 
-Jenkins and GitLab CI pipeline implementations. Jenkins on EC2 deploying Python Flask app. GitLab.com deploying Node.js app. Terraform infrastructure provisioning.
+Jenkins and GitLab CI pipeline implementations. Jenkins on EC2 deploying Python Flask app. GitLab deploying Node.js app. Terraform infrastructure provisioning.
 
 ## Technologies
 
