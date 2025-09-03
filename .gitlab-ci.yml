@@ -31,4 +31,4 @@ deploy:
   script:
     - echo "Deploying Node.js app to App Server"
     - scp -o StrictHostKeyChecking=no -r sample-apps/node-app/* ubuntu@18.134.245.3:/var/www/node-app/
-    - ssh ubuntu@18.134.245.3 "cd /var/www/node-app && npm install && nohup node app.js > /dev/null 2>&1 &"
+    - ssh ubuntu@18.134.245.3 "cd /var/www/node-app && npm install && nohup node app.js </dev/null >/dev/null 2>&1 &"
