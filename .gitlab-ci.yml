@@ -5,6 +5,7 @@ stages:
 
 build:
   stage: build
+  image: node:18
   script:
     - echo "Building Node.js app"
     - cd sample-apps/node-app
@@ -12,6 +13,7 @@ build:
 
 test:
   stage: test
+  image: node:18
   script:
     - echo "Testing Node.js app"
     - cd sample-apps/node-app
@@ -19,6 +21,7 @@ test:
 
 deploy:
   stage: deploy
+  image: node:18
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
