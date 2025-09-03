@@ -15,5 +15,5 @@ variable "instance_type" {
 
 variable "gitlab_instance_type" {
   description = "EC2 instance type for GitLab"
-  default     = "t2.medium" 
+  default     = "t2.large" 
 }

@@ -21,4 +21,4 @@ deploy:
   stage: deploy
   script:
     - echo "Deploying Node.js app to App Server"
-    - echo "In real deployment: scp files and restart service"
+    - 'echo "In real deployment: scp files and restart service"'
