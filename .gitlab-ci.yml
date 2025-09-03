@@ -1,0 +1,24 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building Node.js app"
+    - cd sample-apps/node-app
+    - echo "npm install would run here"
+
+test:
+  stage: test
+  script:
+    - echo "Testing Node.js app"
+    - cd sample-apps/node-app
+    - echo "npm test would run here"
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying Node.js app to App Server"
+    - 'echo "In real deployment: scp files and restart service"'

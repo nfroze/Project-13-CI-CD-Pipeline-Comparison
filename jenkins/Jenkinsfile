@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/nfroze/Project-13-CI-CD-Pipeline-Comparison.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'cd sample-apps/python-app && pip install -r requirements.txt --break-system-packages'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'cd sample-apps/python-app && python3 -m flask --version'
+            }
+        }
+        
+        stage('Deploy to App Server') {
+            steps {
+                sh '''
+                echo "Deploying Python app to App Server"
+                # In real deployment: scp files and restart service
+                # For demo: just echo deployment
+                '''
+            }
+        }
+    }
+}
