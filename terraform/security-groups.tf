@@ -1,4 +1,4 @@
-# Security group for CI/CD tools (Jenkins, GitLab)
+# Security group for CI/CD tools (Jenkins)
 resource "aws_security_group" "cicd_tools" {
   name        = "p13-cicd-tools"
   description = "Security group for CI/CD tools"
@@ -18,14 +18,6 @@ resource "aws_security_group" "cicd_tools" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     description = "Jenkins"
-  }
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-    description = "GitLab HTTP"
   }
 
   egress {
