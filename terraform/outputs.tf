@@ -8,22 +8,7 @@ output "gitlab_public_ip" {
   description = "Public IP of GitLab server"
 }
 
-output "sonarqube_public_ip" {
-  value = aws_instance.sonarqube.public_ip
-  description = "Public IP of SonarQube server"
-}
-
-output "dev_public_ip" {
-  value = aws_instance.dev.public_ip
-  description = "Public IP of Dev environment"
-}
-
-output "staging_public_ip" {
-  value = aws_instance.staging.public_ip
-  description = "Public IP of Staging environment"
-}
-
-output "prod_public_ip" {
-  value = aws_instance.prod.public_ip
-  description = "Public IP of Production environment"
+output "app_server_public_ip" {
+  value = aws_instance.app_server.public_ip
+  description = "Public IP of App server"
 }

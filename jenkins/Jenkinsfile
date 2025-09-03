@@ -21,41 +21,12 @@ pipeline {
             }
         }
         
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    def scannerHome = tool 'SonarScanner'
-                    withSonarQubeEnv('SonarQube') {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                    }
-                }
-            }
-        }
-        
-        stage('Deploy to Dev') {
+        stage('Deploy to App Server') {
             steps {
                 sh '''
-                cd sample-apps/python-app
-                echo "Deploying to Dev: 52.56.150.40"
-                # In real deployment, would SCP files and restart service
-                '''
-            }
-        }
-        
-        stage('Deploy to Staging') {
-            steps {
-                sh '''
-                echo "Deploying to Staging: 18.171.171.215"
-                # Would require approval in real pipeline
-                '''
-            }
-        }
-        
-        stage('Deploy to Prod') {
-            steps {
-                sh '''
-                echo "Deploying to Production: 35.179.166.167"
-                # Would require manual approval
+                echo "Deploying Python app to App Server"
+                # In real deployment: scp files and restart service
+                # For demo: just echo deployment
                 '''
             }
         }

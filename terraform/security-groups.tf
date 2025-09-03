@@ -1,4 +1,4 @@
-# Security group for CI/CD tools (Jenkins, GitLab, SonarQube)
+# Security group for CI/CD tools (Jenkins, GitLab)
 resource "aws_security_group" "cicd_tools" {
   name        = "p13-cicd-tools"
   description = "Security group for CI/CD tools"
@@ -28,14 +28,6 @@ resource "aws_security_group" "cicd_tools" {
     description = "GitLab HTTP"
   }
 
-  ingress {
-    from_port   = 9000
-    to_port     = 9000
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-    description = "SonarQube"
-  }
-
   egress {
     from_port   = 0
     to_port     = 0
@@ -48,10 +40,10 @@ resource "aws_security_group" "cicd_tools" {
   }
 }
 
-# Security group for application servers
+# Security group for application server
 resource "aws_security_group" "app_servers" {
   name        = "p13-app-servers"
-  description = "Security group for application servers"
+  description = "Security group for application server"
   vpc_id      = aws_vpc.main.id
 
   ingress {

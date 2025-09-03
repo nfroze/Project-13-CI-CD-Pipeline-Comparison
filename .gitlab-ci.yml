@@ -1,9 +1,7 @@
 stages:
   - build
   - test
-  - deploy-dev
-  - deploy-staging
-  - deploy-prod
+  - deploy
 
 build:
   stage: build
@@ -19,18 +17,8 @@ test:
     - cd sample-apps/node-app
     - echo "npm test would run here"
 
-deploy-dev:
-  stage: deploy-dev
+deploy:
+  stage: deploy
   script:
-    - echo "Deploying to Dev server 52.56.150.40"
-
-deploy-staging:
-  stage: deploy-staging
-  script:
-    - echo "Deploying to Staging server 18.171.171.215"
-
-deploy-prod:
-  stage: deploy-prod
-  script:
-    - echo "Deploying to Production server 35.179.166.167"
-  when: manual
+    - echo "Deploying Node.js app to App Server"
+    - echo "In real deployment: scp files and restart service"
