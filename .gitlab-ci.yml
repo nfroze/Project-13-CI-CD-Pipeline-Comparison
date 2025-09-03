@@ -8,17 +8,24 @@ build:
   script:
     - echo "Building Node.js app"
     - cd sample-apps/node-app
-    - echo "npm install would run here"
+    - npm install
 
 test:
   stage: test
   script:
     - echo "Testing Node.js app"
     - cd sample-apps/node-app
-    - echo "npm test would run here"
+    - npm test || true
 
 deploy:
   stage: deploy
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - ssh-keyscan -H 18.134.245.3 >> ~/.ssh/known_hosts
   script:
     - echo "Deploying Node.js app to App Server"
-    - 'echo "In real deployment: scp files and restart service"'
+    - scp -o StrictHostKeyChecking=no -r sample-apps/node-app/* ubuntu@18.134.245.3:/var/www/node-app/
+    - ssh ubuntu@18.134.245.3 "cd /var/www/node-app && npm install && nohup node app.js > /dev/null 2>&1 &"
