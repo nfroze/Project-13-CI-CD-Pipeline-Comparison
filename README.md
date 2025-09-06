@@ -8,9 +8,14 @@ Jenkins • GitLab CI • AWS EC2 • Terraform • Python Flask • Node.js •
 
 ## Screenshots
 
-- [Jenkins pipeline](screenshots/jenkins.png)
-- [GitLab pipeline](screenshots/gitlab.png)
-- [Jenkins deployment](screenshots/python-app.png)
-- [GitLab deployment](screenshots/node-app.png)
-- [GitHub PR history ](screenshots/git-pull.png)
-- [AWS console](screenshots/aws-ec2.png)
+![Jenkins pipeline](screenshots/jenkins.png)
+
+![GitLab pipeline](screenshots/gitlab.png)
+
+![Jenkins deployment](screenshots/python-app.png)
+
+![GitLab deployment](screenshots/node-app.png)
+
+![GitHub PR history](screenshots/git-pull.png)
+
+![AWS console](screenshots/aws-ec2.png)
